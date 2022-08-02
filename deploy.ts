@@ -5,8 +5,8 @@ import 'dotenv/config';
 const rpcServer = process.env.RPC_URL!;
 const privateKey = process.env.PRIVATE_KEY!;
 // const privateKeyPassword = process.env.PRIVATE_KEY_PASSWORD!;
-const abiPath = "./SimpleStorage_sol_SimpleStorage.abi";
-const binaryPath = "./SimpleStorage_sol_SimpleStorage.bin";
+const abiPath = "./generated/contracts_SimpleStorage_sol_SimpleStorage.abi";
+const binaryPath = "./generated/contracts_SimpleStorage_sol_SimpleStorage.bin";
 
 const main = async () => {
     const provider = new ethers.providers.JsonRpcProvider(rpcServer);
@@ -21,6 +21,7 @@ const main = async () => {
     console.log("deploying contract, please wait...");
     const contract = await contractFactory.deploy();
     await contract.deployTransaction.wait(1);
+    console.log("Contract deployed at", contract.address);
 
 
     // Contract functions

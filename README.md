@@ -17,9 +17,26 @@ A playground project I use to discover new techniques, tools or just to try thin
 
 In the project directory, you can run:
 
+### `compile`
+
+Compiles the smart contracts using solc-js.
+
 ### `ts-node deploy.ts`
 
 Runs the deploy script.
+
+#### Deploy on a local blockchain
+- Create a `.env` file in the root of the project
+- Add the following variables to the `.env` file
+  - `PRIVATE_KEY` - Your private key from your wallet (e.g. Ganache)
+  - `RPC_URL` - Your RPC SERVER URL (e.g. Ganache)
+- Run `ts-node deploy.ts`
+#### Deploy on a testnet
+- Create a `.env` file in the root of the project
+- Add the following variables to the `.env` file
+  - `PRIVATE_KEY` - Your private key from your wallet (e.g. Metamask)
+  - `RPC_URL` - Your RPC / HTTPS URL (e.g. Alchemy)
+- Run `ts-node deploy.ts`
 
 ### `ts-node utils/encryptKey.ts   `
 
@@ -35,4 +52,4 @@ If you want to make the deploy script use the encrypted key, you need to uncomme
 
 ```
 
-> Please note, if you don't want to have the password in the `.env` file, you can also call the script with the password as an argument: `PRIVATE_KEY_PASSWORD=password ts-node deploy.ts`. B
+> Please note, if you don't want to have the password in the `.env` file, you can also call the script with the password as an argument: `PRIVATE_KEY_PASSWORD=password ts-node deploy.ts`.

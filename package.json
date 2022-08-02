@@ -5,7 +5,7 @@
   "main": "deploy.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "npx solcjs --bin --abi --include-path node_modules/ --base-path . -o . SimpleStorage.sol"
+    "compile": "npx solcjs --bin --abi --include-path node_modules/ --base-path . -o ./generated ./contracts/SimpleStorage.sol"
   },
   "author": "",
   "license": "ISC",
