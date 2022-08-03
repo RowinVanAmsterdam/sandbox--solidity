@@ -53,3 +53,8 @@ If you want to make the deploy script use the encrypted key, you need to uncomme
 ```
 
 > Please note, if you don't want to have the password in the `.env` file, you can also call the script with the password as an argument: `PRIVATE_KEY_PASSWORD=password ts-node deploy.ts`.
+
+## Local environment file should have the following variables:
+- `PRIVATE_KEY` - Your private key from your wallet (e.g. Ganache) to deploy the contract
+- `PRIVATE_KEY_PASSWORD` - A password to decrypt the private key
+- `RPC_URL` - Your RPC / HTTPS URL (e.g. Alchemy)
